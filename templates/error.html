@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+Error!
+{% endblock %}
+
+{% block body %}
+<h2> Sorry, {{ message }}.</h2><br>
+
+<a href="{{ url_for('index') }}">Back home....</a><br><br>
+
+{% endblock %}

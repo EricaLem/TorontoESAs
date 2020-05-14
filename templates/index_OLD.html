@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Home page
+{% endblock %}
+
+{% block body %}
+
+    <h1>{{ headline }}</h1>
+    <br>
+    {% if myBDay %}
+        <h2>Yes! HBD, Erica!</h2>
+    {% else %}
+        <h2>NO!</h2>
+    {% endif %}
+
+    <form action="{{ url_for('welcome') }}" method="post">
+        <input type="text" name="name" placeholder="Enter your name"><br><br>
+        <input type="text" name="note" placeholder="What's your favourite ESA?"><br><br>
+        <button>Submit</button><br><br>
+    </form>
+
+    <br>
+    <a href="{{ url_for('cousins') }}">Click for cousins....</a>
+
+{% endblock %}

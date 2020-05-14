@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    {{ headline }}
+{% endblock %}
+
+{% block body %}
+
+        <ul>
+            {% for i in cuz %}
+            <li>{{ i }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('index') }}">Back home....</a>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+Welcome!
+{% endblock %}
+
+{% block body %}
+<h2>Hello, {{ name }}! Welcome to the City of Toronto Environmentally Significant Areas (ESAs).</h2><br>
+<p>Here are other peoples' favourite ESAs:</p><br>
+<ul>
+    {% for i in notes %}
+    <li>{{ i }}</li>
+    {% endfor %}
+</ul>
+
+<br>
+<a href="{{ url_for('index') }}">Back home....</a><br><br>
+
+{% endblock %}
