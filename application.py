@@ -2,6 +2,7 @@ import datetime
 import os, csv, urllib, json
 import requests
 import pandas as pd
+import plotly.express as px
 
 # DATABASE_URL = 'postgres://postgres:Growitall1!@localhost:5432/postgres'
 # DATABASE_URL = 'postgres://usjpqmbuiezlph:d4c775438eacbcc8d4a583224c8a3fabedeae8418197c9103fb7889edc06eaff@ec2-18-213-176-229.compute-1.amazonaws.com:5432/ddie9l9dn3k4kf'
@@ -56,6 +57,20 @@ def index():
         esaList.append(e)
 
     return render_template("index.html", headline=headline, esaList=esaList)
+
+@app.route("/map", methods=["GET"])
+def map():
+    """See them on a map"""
+    us_cities = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/us-cities-top-1k.csv")
+    fig = px.scatter_mapbox(us_cities, lat="lat", lon="lon", hover_name="City", hover_data=["State", "Population"],
+                            color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+    fig.update_layout(mapbox_style="open-street-map")
+    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+    fig.show()
+
+    # Add review
+    return render_template("map.html")
+
 
 @app.route("/welcome", methods=["POST"])
 def welcome():
