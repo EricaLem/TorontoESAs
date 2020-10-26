@@ -2,7 +2,7 @@ import datetime
 import os, csv, urllib, json
 import requests
 import pandas as pd
-import plotly.express as px
+# import plotly.express as px
 
 # DATABASE_URL = 'postgres://postgres:Growitall1!@localhost:5432/postgres'
 # DATABASE_URL = 'postgres://usjpqmbuiezlph:d4c775438eacbcc8d4a583224c8a3fabedeae8418197c9103fb7889edc06eaff@ec2-18-213-176-229.compute-1.amazonaws.com:5432/ddie9l9dn3k4kf'
@@ -22,8 +22,6 @@ db.init_app(app)
 # APIs
 # 1. Currency exchange API
 fixerIOAPIKey = "5ac26b3a348bf9eeaf676b5ee443a122"
-
-
 
 
 # Routes
