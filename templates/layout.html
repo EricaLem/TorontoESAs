@@ -2,7 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Toronto ESAs</title>
+    <title>Parks in the 6ix: Explore the Humber to the Don... and beyond</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- STYLESHEETS -->
+    <!-- Bootstrap (before stylesheets) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body { margin:0; padding:0; }
+        #map { position: absolute; width: 100%; height: 700px; }
+    </style>
+    <!-- MapBoxGL -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <!-- MapBoxGL stylesheet-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../static/EnvironmentallySignificantAreas.geojson"></script>
     {% block head %} {% endblock %}
 </head>
 <body>
